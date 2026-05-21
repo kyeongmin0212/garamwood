@@ -1,0 +1,12 @@
+[build]
+  command = "npm run build"
+  publish = "_site"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+# /admin 경로 접근 시 Decap CMS 로드
+[[redirects]]
+  from = "/admin"
+  to = "/admin/index.html"
+  status = 200

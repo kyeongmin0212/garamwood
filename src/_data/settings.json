@@ -1,0 +1,31 @@
+{
+  "company": {
+    "name_ko": "가람우드",
+    "name_en": "GARAM WOOD",
+    "since": "2008",
+    "tagline_line1": "나무의 결을 따라,",
+    "tagline_line2": "공간을 짓다",
+    "hero_description": "싱크대, 붙박이장, 신발장. 가람우드는 집의 일상이 머무는 자리를 손으로 빚어 만듭니다. 도면 한 장에서 시작해, 완성까지의 모든 순간을 함께합니다."
+  },
+  "hero_images": {
+    "main": "/images/uploads/hero-1.jpg",
+    "sub": "/images/uploads/hero-2.jpg"
+  },
+  "contact": {
+    "phone": "010-1234-5678",
+    "phone_display": "010-1234-5678",
+    "email": "hello@garamwood.com",
+    "address": "경기도 광주시 ○○로 00",
+    "hours": "평일 10:00 – 18:00 · 주말 사전예약",
+    "instagram_handle": "garamwood",
+    "instagram_url": "https://instagram.com/garamwood",
+    "kakao_url": "#"
+  },
+  "about": {
+    "title": "17년, 손에 익은 나무의 시간",
+    "image": "/images/uploads/about.jpg",
+    "quote": "좋은 가구는 시간이 지날수록 더 좋아집니다. 나무는 그렇게 만들어진 재료니까요.",
+    "paragraph1": "가람우드는 2008년 작은 목공방에서 시작했습니다. 가구 한 점에도 사람의 일상이 깃든다는 마음으로, 매 작업을 처음처럼 합니다.",
+    "paragraph2": "대량 생산된 가구가 아닌, 한 집의 구조와 한 사람의 손때를 고려한 맞춤 제작. 17년 동안 변하지 않은 가람우드의 방식입니다."
+  }
+}

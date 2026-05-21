@@ -1,0 +1,12 @@
+{
+  "name": "garamwood",
+  "version": "1.0.0",
+  "description": "가람우드 - 손으로 짓는 공간",
+  "scripts": {
+    "build": "eleventy",
+    "start": "eleventy --serve"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1"
+  }
+}

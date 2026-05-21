@@ -1,0 +1,117 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# 사진 업로드 경로
+media_folder: "src/images/uploads"
+public_folder: "/images/uploads"
+
+# 한글 UI
+locale: 'ko'
+
+collections:
+  # ========== 시공 사례 (갤러리) ==========
+  - name: "gallery"
+    label: "시공 사례"
+    label_singular: "시공 사례"
+    folder: "src/gallery"
+    create: true
+    slug: "{{slug}}"
+    summary: "{{location}} · {{title}} ({{date | date('YYYY-MM')}})"
+    sortable_fields: ['date', 'title']
+    fields:
+      - { label: "제목", name: "title", widget: "string", hint: "예: 화이트 오크 싱크대" }
+      - { label: "지역", name: "location", widget: "string", hint: "예: 판교, 분당" }
+      - { label: "날짜", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "사진", name: "image", widget: "image" }
+      - label: "카테고리"
+        name: "category"
+        widget: "select"
+        options: ["싱크대", "붙박이장", "신발장", "디테일", "기타"]
+      - label: "갤러리에서의 크기"
+        name: "size"
+        widget: "select"
+        hint: "갤러리 그리드에서 차지할 크기. large = 가장 큼"
+        options:
+          - { label: "큼 (가로 3, 세로 2)", value: "large" }
+          - { label: "기본 가로 (가로 3, 세로 1)", value: "medium" }
+          - { label: "세로 (가로 2, 세로 2)", value: "medium-tall" }
+          - { label: "작은 가로 (가로 2, 세로 1)", value: "small-wide" }
+          - { label: "작음 (가로 1, 세로 1)", value: "small" }
+        default: "medium"
+      - { label: "설명 (선택)", name: "description", widget: "text", required: false }
+
+  # ========== 사이트 기본 정보 ==========
+  - name: "settings"
+    label: "사이트 설정"
+    files:
+      - name: "site"
+        label: "전체 설정 (한 번에 다 보기)"
+        file: "src/_data/settings.json"
+        fields:
+          - label: "회사 정보"
+            name: "company"
+            widget: "object"
+            fields:
+              - { label: "회사명 (한글)", name: "name_ko", widget: "string" }
+              - { label: "회사명 (영문)", name: "name_en", widget: "string" }
+              - { label: "창업 연도", name: "since", widget: "string" }
+              - { label: "메인 카피 첫줄", name: "tagline_line1", widget: "string", hint: "예: 나무의 결을 따라," }
+              - { label: "메인 카피 둘째줄", name: "tagline_line2", widget: "string", hint: "예: 공간을 짓다" }
+              - { label: "히어로 설명문", name: "hero_description", widget: "text" }
+
+          - label: "메인 사진"
+            name: "hero_images"
+            widget: "object"
+            fields:
+              - { label: "큰 사진 (오른쪽 위)", name: "main", widget: "image" }
+              - { label: "작은 사진 (왼쪽 아래)", name: "sub", widget: "image" }
+
+          - label: "연락처"
+            name: "contact"
+            widget: "object"
+            fields:
+              - { label: "전화번호 (숫자만, 하이픈 OK)", name: "phone", widget: "string" }
+              - { label: "전화번호 표시", name: "phone_display", widget: "string" }
+              - { label: "이메일", name: "email", widget: "string" }
+              - { label: "주소", name: "address", widget: "string" }
+              - { label: "영업시간", name: "hours", widget: "string" }
+              - { label: "인스타 ID (@ 빼고)", name: "instagram_handle", widget: "string" }
+              - { label: "인스타 주소 (https://...)", name: "instagram_url", widget: "string" }
+              - { label: "카카오톡 채널 주소", name: "kakao_url", widget: "string" }
+
+          - label: "브랜드 소개"
+            name: "about"
+            widget: "object"
+            fields:
+              - { label: "큰 제목", name: "title", widget: "string" }
+              - { label: "왼쪽 큰 사진", name: "image", widget: "image" }
+              - { label: "사진 위 인용구", name: "quote", widget: "text" }
+              - { label: "본문 1번째 단락", name: "paragraph1", widget: "text" }
+              - { label: "본문 2번째 단락", name: "paragraph2", widget: "text" }
+
+  # ========== 연혁 ==========
+  - name: "timeline"
+    label: "연혁"
+    label_singular: "연혁 항목"
+    folder: "src/timeline"
+    create: true
+    slug: "{{year}}"
+    summary: "{{year}} - {{text}}"
+    fields:
+      - { label: "연도", name: "year", widget: "number", value_type: "int", min: 1900, max: 2100 }
+      - { label: "내용", name: "text", widget: "string", hint: "예: 누적 시공 1,000건 달성" }
+
+  # ========== 서비스 (싱크대/붙박이장/신발장) ==========
+  - name: "services"
+    label: "제작 품목"
+    label_singular: "품목"
+    folder: "src/services"
+    create: false   # 새로 추가는 안 함 (3개 고정)
+    delete: false
+    fields:
+      - { label: "품목명 (한글)", name: "title", widget: "string" }
+      - { label: "품목명 (영문)", name: "title_en", widget: "string" }
+      - { label: "순서", name: "order", widget: "number", value_type: "int" }
+      - { label: "대표 사진", name: "image", widget: "image" }
+      - { label: "설명", name: "description", widget: "text" }
