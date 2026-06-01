@@ -1,4 +1,12 @@
+const sitemap = require("@11ty/eleventy-plugin-sitemap");
+
 module.exports = function(eleventyConfig) {
+  eleventyConfig.addPlugin(sitemap, {
+    sitemap: {
+      hostname: "https://garamwood.com",
+    },
+  });
+
   // 정적 파일 그대로 복사
   eleventyConfig.addPassthroughCopy("src/admin");
   eleventyConfig.addPassthroughCopy("src/images");
