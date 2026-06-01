@@ -1,7 +1,7 @@
 {
   "name": "garamwood",
   "version": "1.0.0",
-  "description": "가람우드 ‐ 싱크대",
+  "description": "가람우드‒싱크대",
   "scripts": {
     "build": "eleventy",
     "start": "eleventy --serve"
