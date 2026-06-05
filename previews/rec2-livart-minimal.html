@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>추천2 · LIVART형 미니멀 프리미엄 — 가람우드</title>
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet">
+<style>
+:root{--ink:#1a1a1a;--muted:#8c8c8c;--line:#ededed;--wood:#8a6440;--accent:#1a1a1a}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Pretendard,system-ui,sans-serif;color:var(--ink);background:#fff;font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}img{display:block;max-width:100%}
+.ph{position:relative;background:linear-gradient(150deg,#efe9e0,#cbb89c);overflow:hidden}
+.ph::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(103deg,rgba(120,90,55,.06) 0 2px,transparent 2px 9px)}
+.ph .lab{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);color:#6b5232;font-size:12px;letter-spacing:.06em;text-align:center;z-index:1;white-space:nowrap;opacity:.8}
+
+/* header */
+.head{border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);z-index:40}
+.head-in{max-width:1280px;margin:0 auto;padding:20px 24px;display:flex;align-items:center;gap:34px}
+.logo{font-weight:800;font-size:24px;letter-spacing:.12em}
+.gnb{display:flex;gap:30px;font-size:15px;font-weight:600}
+.gnb a:hover{color:var(--wood)}
+.head-util{margin-left:auto;display:flex;gap:22px;font-size:13px;color:var(--muted);align-items:center}
+.head-util a:hover{color:var(--ink)}
+.subnav{border-bottom:1px solid var(--line)}
+.subnav-in{max-width:1280px;margin:0 auto;padding:12px 24px;display:flex;gap:26px;font-size:13.5px;color:var(--muted)}
+.subnav a:hover{color:var(--ink)}
+
+/* hero */
+.hero{max-width:1280px;margin:0 auto;padding:0 24px}
+.hero .ph{height:64vh;min-height:440px;border-radius:0;display:flex;align-items:center}
+.hero-txt{position:relative;z-index:2;padding:0 8vw;color:#3a2c18}
+.hero-txt small{font-size:13px;letter-spacing:.3em;font-weight:700}
+.hero-txt h1{font-size:clamp(34px,5vw,60px);font-weight:300;line-height:1.2;margin:18px 0 22px;letter-spacing:-.01em}
+.hero-txt a{display:inline-block;border:1px solid #3a2c18;padding:13px 30px;font-size:14px;font-weight:600;border-radius:0}
+.hero-txt a:hover{background:#3a2c18;color:#fff}
+
+/* tabs */
+.tabs{max-width:1280px;margin:60px auto 30px;padding:0 24px;text-align:center}
+.tabs h2{font-size:13px;letter-spacing:.25em;color:var(--muted);font-weight:700;margin-bottom:10px}
+.tabs h3{font-size:30px;font-weight:300;margin-bottom:26px}
+.tabrow{display:flex;gap:26px;justify-content:center;font-size:14px;color:var(--muted);border-bottom:1px solid var(--line);padding-bottom:16px}
+.tabrow b{color:var(--ink);font-weight:700;border-bottom:2px solid var(--ink);padding-bottom:16px;margin-bottom:-17px}
+
+/* grid */
+.grid{max-width:1280px;margin:36px auto;padding:0 24px;display:grid;grid-template-columns:repeat(4,1fr);gap:28px 24px}
+.prod .ph{aspect-ratio:4/5;border-radius:2px;margin-bottom:14px}
+.prod-brand{display:inline-block;font-size:11px;border:1px solid var(--line);padding:3px 9px;border-radius:2px;color:var(--muted);margin-bottom:9px;font-weight:600}
+.prod h4{font-size:15px;font-weight:500;line-height:1.45;margin-bottom:10px;letter-spacing:-.01em}
+.prod .meta{font-size:13px;color:var(--wood);font-weight:600;display:flex;justify-content:space-between;align-items:center}
+.prod .star{color:var(--muted);font-weight:400}
+
+/* editorial split */
+.split{max-width:1280px;margin:80px auto;padding:0 24px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.split .ph{aspect-ratio:1/1;border-radius:2px}
+.split h3{font-size:13px;letter-spacing:.25em;color:var(--muted);font-weight:700;margin-bottom:14px}
+.split h2{font-size:34px;font-weight:300;line-height:1.3;margin-bottom:20px}
+.split p{color:var(--muted);line-height:1.9;margin-bottom:14px}
+
+/* cta */
+.cta-band{text-align:center;padding:90px 24px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:40px}
+.cta-band h2{font-size:34px;font-weight:300;margin-bottom:14px}
+.cta-band p{color:var(--muted);margin-bottom:30px}
+.cta-band a{display:inline-block;margin:0 6px;padding:15px 34px;font-size:14px;font-weight:600}
+.cta-band .b1{background:var(--ink);color:#fff}.cta-band .b2{border:1px solid var(--ink)}
+
+footer{padding:54px 24px 30px;font-size:13px;color:var(--muted)}
+.foot{max-width:1280px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px}
+.foot h4{color:var(--ink);font-weight:800;letter-spacing:.1em;margin-bottom:10px;font-size:18px}
+.foot a,.foot p{display:block;line-height:1.9}
+.foot-bottom{max-width:1280px;margin:30px auto 0;padding-top:18px;border-top:1px solid var(--line);font-size:12px;opacity:.7}
+
+@media(max-width:900px){.gnb,.subnav-in{display:none}.grid{grid-template-columns:repeat(2,1fr)}.split{grid-template-columns:1fr;gap:30px}}
+</style>
+</head>
+<body>
+<header class="head">
+  <div class="head-in">
+    <a class="logo">가람우드</a>
+    <nav class="gnb"><a>싱크대</a><a>붙박이장</a><a>신발장</a><a>주방리모델링</a><a>시공사례</a></nav>
+    <div class="head-util"><a>로그인</a><a>견적문의</a><a>🔍</a></div>
+  </div>
+</header>
+<div class="subnav"><div class="subnav-in"><a>아일랜드형</a><a>대면형</a><a>도장 싱크대</a><a>천연무늬목</a><a>세라믹 상판</a><a>드레스룸</a><a>현관 신발장</a></div></div>
+
+<section class="hero">
+  <div class="ph">
+    <div class="hero-txt">
+      <small>GARAM WOOD · SINCE 2002</small>
+      <h1>손에 익은<br>나무의 시간</h1>
+      <a>시공 사례 보기</a>
+    </div>
+  </div>
+</section>
+
+<div class="tabs">
+  <h2>OUR CRAFT</h2>
+  <h3>완성된 공간들</h3>
+  <div class="tabrow"><b>추천순</b><span>신상품순</span><span>지역순</span><span>품목순</span></div>
+</div>
+
+<div class="grid">
+  <div class="prod"><div class="ph"><span class="lab">판교 · 화이트 오크 싱크대</span></div><span class="prod-brand">가람우드 · 싱크대</span><h4>판교 화이트 오크 아일랜드 주방</h4><div class="meta"><span>견적상담</span><span class="star">★ 5.0</span></div></div>
+  <div class="prod"><div class="ph"><span class="lab">분당 · 드레스룸 붙박이장</span></div><span class="prod-brand">가람우드 · 붙박이장</span><h4>분당 ㄷ자 드레스룸 붙박이장</h4><div class="meta"><span>견적상담</span><span class="star">리뷰 12</span></div></div>
+  <div class="prod"><div class="ph"><span class="lab">위례 · 아일랜드 주방</span></div><span class="prod-brand">가람우드 · 싱크대</span><h4>위례 아일랜드 식탁 일체형 주방</h4><div class="meta"><span>견적상담</span><span class="star">★ 5.0</span></div></div>
+  <div class="prod"><div class="ph"><span class="lab">잠실 · 멀바우 신발장</span></div><span class="prod-brand">가람우드 · 신발장</span><h4>잠실 멀바우 원목 벤치 신발장</h4><div class="meta"><span>견적상담</span><span class="star">NEW</span></div></div>
+  <div class="prod"><div class="ph"><span class="lab">광교 · 안방 붙박이장</span></div><span class="prod-brand">가람우드 · 붙박이장</span><h4>광교 거울도어 슬라이딩 붙박이장</h4><div class="meta"><span>견적상담</span><span class="star">★ 4.9</span></div></div>
+  <div class="prod"><div class="ph"><span class="lab">하남 · 현관 신발장</span></div><span class="prod-brand">가람우드 · 신발장</span><h4>하남 슬림 현관 신발장</h4><div class="meta"><span>견적상담</span><span class="star">리뷰 8</span></div></div>
+  <div class="prod"><div class="ph"><span class="lab">작업실 · 디테일</span></div><span class="prod-brand">가람우드 · 디테일</span><h4>마감과 조립부의 차이</h4><div class="meta"><span>자세히</span><span class="star">제작기</span></div></div>
+  <div class="prod"><div class="ph"><span class="lab">싱크대 맞춤제작</span></div><span class="prod-brand">가람우드 · 제작품목</span><h4>물과 불이 오가는 자리, 맞춤 싱크대</h4><div class="meta"><span>견적상담</span><span class="star">★ 5.0</span></div></div>
+</div>
+
+<section class="split">
+  <div class="ph"><span class="lab">공방 · 작업 사진</span></div>
+  <div>
+    <h3>ABOUT GARAM WOOD</h3>
+    <h2>17년, 변하지 않은<br>맞춤제작의 방식</h2>
+    <p>대량 생산된 가구가 아닌, 한 집의 구조와 한 사람의 손때를 고려한 맞춤 제작. 도면 한 장에서 시작해 완성까지 함께합니다.</p>
+    <p>"좋은 가구는 시간이 지날수록 더 좋아집니다. 나무는 그렇게 만들어진 재료니까요."</p>
+  </div>
+</section>
+
+<section class="cta-band">
+  <h2>시작은, 한 통의 연락부터</h2>
+  <p>도면이 없어도, 사진 한 장이어도 괜찮습니다.</p>
+  <a class="b1" href="tel:01037647129">010-3764-7129</a><a class="b2" href="https://open.kakao.com/o/sY3yqVvi">카카오톡 상담</a>
+</section>
+
+<footer>
+  <div class="foot">
+    <div><h4>가람우드</h4><p>싱크대 · 붙박이장 · 신발장 1:1 맞춤제작</p></div>
+    <div><a href="tel:01037647129">010-3764-7129</a><a>매일 09:00 – 18:00</a><a href="mailto:sji4844@naver.com">sji4844@naver.com</a></div>
+    <div><p>경기도 고양시 일산서구<br>장자길82번길 32 가람우드</p></div>
+  </div>
+  <div class="foot-bottom">© 2026 가람우드. All rights reserved.</div>
+</footer>
+</body>
+</html>
