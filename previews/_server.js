@@ -15,7 +15,7 @@ const types = {
 
 http.createServer((req, res) => {
   let url = decodeURIComponent(req.url.split('?')[0]);
-  if (url === '/') url = '/rec4b-garam-minimal-white.html';
+  if (url === '/') url = '/가람우드 사이트.html';
   const file = path.join(root, url);
   if (!file.startsWith(root) || !fs.existsSync(file) || fs.statSync(file).isDirectory()) {
     res.writeHead(404); res.end('Not found'); return;
